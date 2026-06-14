@@ -1234,6 +1234,18 @@
         // Feature flag for scroll-spy
         const FEATURE_SCROLLSPY = false;
 
+        // Reuse existing hover styling for active state
+        const style = document.createElement('style');
+        style.textContent = `
+            .nav-link.active {
+                color: #fff;
+            }
+            .nav-link.active::after {
+                width: 80%;
+            }
+        `;
+        document.head.appendChild(style);
+
         // Create floating particles
         const particlesContainer = document.getElementById('particles');
         for (let i = 0; i < 50; i++) {
