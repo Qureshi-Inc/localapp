@@ -1,0 +1,68 @@
+title: AI Dev - Autonomous Coding Agent
+email: contact@ai-dev.dev
+description: >-
+  Transform GitHub issues into tested, production-ready pull requests using local LLMs—no API costs, full privacy.
+baseurl: ""
+url: "https://ai-dev.dev"
+twitter_username: aidev
+github_username: Qureshi-Inc
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+  - jekyll-feed
+
+# Custom domain configuration (optional)
+# If using custom domain, uncomment and set your domain:
+# host: ai-dev.dev
+
+# SEO settings
+author:
+  name: Moiz Qureshi
+  email: contact@ai-dev.dev
+  url: https://github.com/Qureshi-Inc/ai-dev
+
+# Google Analytics (optional)
+# google_analytics: UA-XXXXXXXX-X
+
+# GitHub Pages specific settings
+include:
+  - _pages
+  - assets
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Jekyll SEO Tag configuration
+twitter:
+  username: aidev
+  card: summary_large_image
+
+facebook:
+  app_id: 
+  publisher:
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "page"
+      permalink: /:basename/
+
+# Repository settings for GitHub Pages
+repository: Qureshi-Inc/ai-dev
+
+# Deployment configuration
+github:
+  pages:
+    branch: gh-pages
+    cname: ai-dev.dev
