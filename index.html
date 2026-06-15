@@ -1229,6 +1229,8 @@
         // Feature flag for scroll-spy
         const FEATURE_SCROLLSPY = false;
         
+
+
         // Reuse existing hover styling for active state
         const style = document.createElement('style');
         style.textContent = `
@@ -1240,42 +1242,6 @@
             }
         `;
         document.head.appendChild(style);
-
-        // Scroll-spy functionality (behind feature flag)
-        if (FEATURE_SCROLLSPY) {
-            const navLinks = document.querySelectorAll('.nav-link');
-            const sections = document.querySelectorAll('section[id]');
-
-            // Map section IDs to nav link targets
-            const sectionToNavLink = {
-                'home': '#home',
-                'features': '#features',
-                'demo': '#demo',
-                'stats': '#stats'
-            };
-
-            // Create intersection observer for scroll-spy
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const sectionId = entry.target.id;
-                        const navLinkSelector = sectionToNavLink[sectionId] || `#${sectionId}`;
-                        
-                        // Remove active class from all links
-                        navLinks.forEach(link => link.classList.remove('active'));
-                        
-                        // Add active class to matching link
-                        const activeLink = document.querySelector(`a[href="${navLinkSelector}"]`);
-                        if (activeLink) {
-                            activeLink.classList.add('active');
-                        }
-                    }
-                });
-            }, { threshold: 0.5 });
-
-            // Observe all sections
-            sections.forEach(section => observer.observe(section));
-        }
 
 
 
