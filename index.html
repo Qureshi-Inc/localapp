@@ -9,6 +9,7 @@
     <meta name="description" content="Transform GitHub issues into tested, production-ready pull requests using local LLMs—no API costs, full privacy. AI Dev automates your entire development workflow.">
     <meta name="keywords" content="AI, autonomous coding, GitHub, AI Dev, machine learning, local LLMs, Qwen, DeepSeek, code automation, PR generation">
     <meta name="author" content="Moiz Qureshi">
+    <meta name="robots" content="index, follow">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
@@ -16,6 +17,8 @@
     <meta property="og:title" content="AI Dev - Autonomous Coding Agent | GitHub Issues to PRs">
     <meta property="og:description" content="Transform GitHub issues into tested, production-ready pull requests using local LLMs—no API costs, full privacy. AI Dev automates your entire development workflow.">
     <meta property="og:image" content="https://ai-dev.dev/ai-dev-preview.png">
+    <meta property="og:image:alt" content="AI Dev - Autonomous Coding Agent Interface">
+    <meta property="og:site_name" content="AI Dev">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
@@ -23,6 +26,7 @@
     <meta property="twitter:title" content="AI Dev - Autonomous Coding Agent | GitHub Issues to PRs">
     <meta property="twitter:description" content="Transform GitHub issues into tested, production-ready pull requests using local LLMs—no API costs, full privacy. AI Dev automates your entire development workflow.">
     <meta property="twitter:image" content="https://ai-dev.dev/ai-dev-preview.png">
+    <meta property="twitter:creator" content="@aidev">
 
     <!-- Structured Data (JSON-LD) -->
     <script type="application/ld+json">
@@ -56,8 +60,18 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 
+    <!-- Additional Favicon Formats -->
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#00d4ff">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="https://ai-dev.dev/">
+
+    <!-- Additional SEO Meta Tags -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#00d4ff">
+    <meta name="application-name" content="AI Dev">
+    <meta name="generator" content="Jekyll v4.3.2">
 
     <!-- Preload critical resources -->
     <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" as="style">
@@ -1153,6 +1167,11 @@
                 font-size: 0.75rem;
             }
         }
+
+        /* Schema Markup for SEO */
+        .schema-org {
+            display: none;
+        }
     </style>
 </head>
 <body>
@@ -1449,6 +1468,29 @@
         <p style="color: #808080; margin-bottom: 2rem;">Built with ❤️ for the future of autonomous development</p>
         <a href="https://github.com/Qureshi-Inc/ai-dev" target="_blank" class="footer-link">🐙 Visit GitHub Repository</a>
     </footer>
+
+    <!-- Schema Markup for SEO -->
+    <script type="application/ld+json" class="schema-org">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "AI Dev - Autonomous Coding Agent",
+      "description": "Transform GitHub issues into tested, production-ready pull requests using local LLMs—no API costs, full privacy. AI Dev automates your entire development workflow.",
+      "url": "https://ai-dev.dev/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Qureshi Inc.",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://ai-dev.dev/ai-dev-preview.png",
+          "width": 1200,
+          "height": 630
+        }
+      },
+      "datePublished": "2024-01-01T00:00:00Z",
+      "dateModified": "2024-01-01T00:00:00Z"
+    }
+    </script>
 
     <!-- Theme Toggle Button -->
     <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" title="Toggle theme">☀️</button>
