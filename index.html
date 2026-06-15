@@ -211,6 +211,18 @@
             width: 80%;
         }
 
+        .nav-link.active {
+            color: #fff;
+        }
+
+        .nav-link.active {
+            color: #fff;
+        }
+
+        .nav-link.active::after {
+            width: 80%;
+        }
+
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -1482,6 +1494,27 @@
 
     <script src="https://unpkg.com/lucide@latest"></script>
     <script>
+        // Feature flag for scroll-spy
+        const FEATURE_SCROLLSPY = false;
+        
+        // Reuse existing hover styling for active state
+        const style = document.createElement('style');
+        style.textContent = `
+            .nav-link.active {
+                color: #fff;
+            }
+            .nav-link.active::after {
+                width: 80%;
+            }
+        `;
+        document.head.appendChild(style);
+
+
+
+
+
+
+
         // Create floating particles
         const particlesContainer = document.getElementById('particles');
         for (let i = 0; i < 50; i++) {
@@ -1777,6 +1810,52 @@
             // Load GitHub issues after page loads
             loadGitHubIssues();
         });
+
+        // Scroll-spy functionality (behind feature flag)
+        if (FEATURE_SCROLLSPY) {
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sectionIds = ['#home', '#features', '#demo', '#stats'];
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.5
+            };
+            
+            const sectionObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        // Remove active class from all links
+                        navLinks.forEach(link => link.classList.remove('active'));
+                        
+                        // Find the corresponding section and add active class to matching link
+                        const targetSection = entry.target;
+                        let matchingLink = null;
+                        
+                        // Map 'Benefits' to '#stats'
+                        if (targetSection.id === 'stats') {
+                            matchingLink = document.querySelector('a[href="#stats"]');
+                        } else {
+                            matchingLink = document.querySelector(`a[href="${targetSection.id}"]`);
+                        }
+                        
+                        if (matchingLink) {
+                            matchingLink.classList.add('active');
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe all sections
+            sectionIds.forEach(id => {
+                const section = document.querySelector(id);
+                if (section) {
+                    sectionObserver.observe(section);
+                }
+            });
+        }
+
+
     </script>
 </body>
 </html>
