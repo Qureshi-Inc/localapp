@@ -1224,6 +1224,18 @@
     <script>
         // Feature flag for scroll-spy
         const FEATURE_SCROLLSPY = false;
+        
+        // Reuse existing hover styling for active state
+        const style = document.createElement('style');
+        style.textContent = `
+            .nav-link.active {
+                color: #fff;
+            }
+            .nav-link.active::after {
+                width: 80%;
+            }
+        `;
+        document.head.appendChild(style);
 
         // Reuse existing hover styling for active state
         const style = document.createElement('style');
