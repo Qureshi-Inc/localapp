@@ -58,6 +58,13 @@ function App() {
     ],
   };
 
+  // Function to handle year change
+  const handleYearChange = (e) => {
+    setSelectedYear(e.target.value);
+    // In a real app, this would fetch new data based on the selected year
+    console.log(`Selected year: ${e.target.value}`);
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -70,7 +77,7 @@ function App() {
           <select 
             id="year-select"
             value={selectedYear} 
-            onChange={(e) => setSelectedYear(e.target.value)}
+            onChange={handleYearChange}
           >
             <option value="2023">2023</option>
             <option value="2022">2022</option>
