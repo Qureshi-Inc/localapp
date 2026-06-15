@@ -13,9 +13,8 @@ theme: minima
 plugins:
   - jekyll-feed
 
-# Custom domain configuration (optional)
-# If using custom domain, uncomment and set your domain:
-# host: ai-dev.dev
+# Custom domain configuration for GitHub Pages
+host: ai-dev.dev
 
 # SEO settings
 author:
@@ -66,3 +65,6 @@ github:
   pages:
     branch: gh-pages
     cname: ai-dev.dev
+
+# GitHub Pages specific configurations
+remote_theme: jekyll/minima
