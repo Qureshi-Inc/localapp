@@ -299,6 +299,11 @@
                 bottom: 8rem;
                 right: 1rem;
             }
+            
+            /* Adjust feature cards for mobile */
+            .feature-card {
+                padding: 2rem 1.5rem;
+            }
         }
 
         @media (max-width: 480px) {
@@ -323,6 +328,15 @@
             .modal {
                 padding: 2rem 1.5rem;
                 width: 95%;
+            }
+            
+            /* Mobile navigation adjustments */
+            nav {
+                padding: 1rem;
+            }
+            
+            .nav-links {
+                top: 60px;
             }
         }
 
@@ -813,6 +827,11 @@
                 text-align: center;
             }
             .mobile-menu-btn { display: flex; }
+            
+            /* Mobile-specific adjustments */
+            .hero-content {
+                padding: 0 1rem;
+            }
         }
 
         /* Testimonials */
@@ -1086,6 +1105,11 @@
             .nav-link { padding: 1rem 2rem; font-size: 1.1rem; width: 80%; text-align: center; }
             .mobile-menu-btn { display: flex; }
             .metrics-bar { gap: 2rem; flex-wrap: wrap; }
+            
+            /* Mobile-specific adjustments */
+            .hero-content {
+                padding: 0 1rem;
+            }
         }
 
         /* Additional responsive enhancements */
@@ -1107,6 +1131,26 @@
             
             .section-title {
                 font-size: 4rem;
+            }
+        }
+        
+        /* Extra small devices (portrait phones, less than 576px) */
+        @media (max-width: 575.98px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .feature-card, .stat-card, .testimonial-card, .team-card {
+                padding: 1.5rem;
+            }
+            
+            .terminal-body {
+                padding: 0.75rem;
+                font-size: 0.75rem;
             }
         }
     </style>
