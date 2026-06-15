@@ -1777,6 +1777,39 @@
             // Load GitHub issues after page loads
             loadGitHubIssues();
         });
+
+        // Add scroll to top functionality for mobile devices
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Handle scroll events for header effects and animations
+        let lastScrollY = window.scrollY;
+        const nav = document.querySelector('nav');
+        
+        window.addEventListener('scroll', () => {
+            const currentScrollY = window.scrollY;
+            
+            // Hide/show navigation on scroll
+            if (currentScrollY > 100 && currentScrollY > lastScrollY) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+            
+            lastScrollY = currentScrollY;
+        });
+
+        // Add keyboard navigation support
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal({target: {id: 'modal-overlay'}});
+                toggleChat();
+            }
+        });
     </script>
 </body>
 </html>
