@@ -87,9 +87,9 @@ function App() {
 
         {/* Charts Container */}
         <div className="charts-container">
-          <BarChart data={barChartData} />
-          <LineChart data={lineChartData} />
-          <PieChart data={pieChartData} />
+          <BarChart data={barChartData} title="Sales Chart" />
+          <LineChart data={lineChartData} title="Revenue Chart" />
+          <PieChart data={pieChartData} title="Distribution Chart" />
         </div>
       </header>
     </div>
