@@ -78,3 +78,28 @@ p {
     height: 300px;
   }
 }
+
+/* Additional responsive improvements */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  p {
+    font-size: 1rem;
+  }
+  
+  .controls {
+    padding: 10px;
+  }
+  
+  .chart-container {
+    height: 250px;
+  }
+}
+
+/* Ensure proper spacing on all screen sizes */
+.charts-container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
