@@ -9,5 +9,5 @@ export const navigation = [
   { name: 'Benefits', path: '/#stats' },
   { name: 'Testimonials', path: '/#testimonials' },
   { name: 'FAQ', path: '/#faq' },
-  { name: 'Contact Us', path: '/contact.html' }
+  { name: 'Contact Us', path: '/contact' }
 ];
