@@ -11,7 +11,7 @@ export const routes = [
   {
     path: '/contact',
     name: 'Contact Us',
-    file: 'contact.html'
+    file: 'ContactUs.js'
   }
 ];
 
