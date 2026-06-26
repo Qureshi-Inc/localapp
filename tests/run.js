@@ -30,6 +30,7 @@ function describe(name, fn) {
 // Import modules
 import { routes, resolveRoute, getRouteUrl } from '../src/routes/index.js';
 import { navigation } from '../src/navigation/index.js';
+import { ContactUs } from '../src/pages/ContactUs.js';
 
 describe('Routes Configuration', () => {
   test('should export routes array', () => {
@@ -77,7 +78,7 @@ describe('Navigation Configuration', () => {
   test('Contact Us navigation item should point to correct path', () => {
     const contactNav = navigation.find(n => n.name === 'Contact Us');
     assert.ok(contactNav, 'Contact Us navigation item missing');
-    assert.strictEqual(contactNav.path, '/contact.html');
+    assert.strictEqual(contactNav.path, '/contact');
   });
 });
 
@@ -107,6 +108,28 @@ describe('Contact Us Page', () => {
     assert.ok(content.includes('var(--secondary)'), 'Missing secondary color variable');
     assert.ok(content.includes('var(--dark)'), 'Missing dark background variable');
     assert.ok(content.includes('var(--card-bg)'), 'Missing card background variable');
+  });
+});
+
+describe('ContactUs Component', () => {
+  test('should export ContactUs function', () => {
+    assert.ok(typeof ContactUs === 'function', 'ContactUs is not a function');
+  });
+
+  test('should return valid HTML structure', () => {
+    const html = ContactUs();
+    assert.ok(typeof html === 'string', 'ContactUs should return a string');
+    assert.ok(html.includes('<section id="contact">'), 'Missing contact section');
+    assert.ok(html.includes('class="contact-form"'), 'Missing contact form class');
+  });
+
+  test('should contain all required form fields', () => {
+    const html = ContactUs();
+    assert.ok(html.includes('id="name"'), 'Missing name input');
+    assert.ok(html.includes('id="email"'), 'Missing email input');
+    assert.ok(html.includes('id="subject"'), 'Missing subject input');
+    assert.ok(html.includes('id="message"'), 'Missing message textarea');
+    assert.ok(html.includes('Send Message'), 'Missing submit button');
   });
 });
 
